@@ -14,17 +14,20 @@ Help
 ----
 
 ```
-Usage: s3-bulk-copy-object [--concurrency NUM] [--recursive] [--region REGION] [--timeout SECONDS] [--wait] SOURCE DESTINATION
+Usage: s3-bulk-copy-object [--acl ACL] [--concurrency NUM] [--recursive] [--region REGION] [--storage-class CLASS] [--timeout SECONDS] [--wait] SOURCE DESTINATION
 
 Positional arguments:
   SOURCE                 Source bucket
   DESTINATION            Destination bucket
 
 Options:
+  --acl ACL, -a ACL      ACL to apply to the copied object
   --concurrency NUM, -c NUM
                          Number of concurrent transfers [default: 10]
   --recursive, -r        Recursively copy all objects in the source bucket
   --region REGION        AWS region [default: us-east-1]
+  --storage-class CLASS
+                         Storage class to apply to the copied object [default: STANDARD]
   --timeout SECONDS, -t SECONDS
                          Copy timeout in seconds [default: 60]
   --wait, -w             Wait for the item to be copied
